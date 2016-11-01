@@ -5,10 +5,20 @@
  */
 package dao;
 
+import javax.faces.bean.ManagedBean;
+import javax.faces.bean.SessionScoped;
+
 /**
  *
  * @author Suguru
  */
+@ManagedBean
+@SessionScoped
 public class StockQuoteDAO {
+    
+    
+    
+    
+    
     
 }
