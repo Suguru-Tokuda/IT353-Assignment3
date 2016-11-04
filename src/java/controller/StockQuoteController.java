@@ -5,10 +5,39 @@
  */
 package controller;
 
+import javax.faces.bean.ManagedBean;
+import javax.faces.bean.SessionScoped;
+import model.StockQuoteModel;
+
 /**
  *
  * @author Suguru
  */
+
+@ManagedBean
+@SessionScoped
 public class StockQuoteController {
+    
+    private StockQuoteModel theModel;
+    
+    public StockQuoteController() {
+        theModel = new StockQuoteModel();
+    }
+    
+    public StockQuoteModel getStockQuoteModel() {
+        return theModel;
+    }
+    
+    public StockQuoteModel getStockPrice() {
+        StockQuoteModel retVal = null;
+        
+        
+        
+        return retVal;
+    }
+    
+    
+    
+    
     
 }

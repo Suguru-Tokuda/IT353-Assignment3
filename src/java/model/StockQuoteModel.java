@@ -11,25 +11,37 @@ package model;
  */
 public class StockQuoteModel {
     
-    private String comSymbole;
+    private String comSymbol;
     private float price;
     private float changeInPrice;
     private float changeInPercent;
-    private float volume;
+    private int volume;
     private float ytdChange;
+    
+    public StockQuoteModel() {
+    }
+    
+    public StockQuoteModel(String comSymbol, float price, float changeInPrice, float changeInPercent, int volume, float ytdChange) {
+        this.comSymbol = comSymbol;
+        this.price = price;
+        this.changeInPrice = changeInPrice;
+        this.changeInPercent = changeInPercent;
+        this.volume = volume;
+        this.ytdChange = ytdChange;
+    }
 
     /**
      * @return the comSymbole
      */
     public String getComSymbole() {
-        return comSymbole;
+        return comSymbol;
     }
 
     /**
      * @param comSymbole the comSymbole to set
      */
     public void setComSymbole(String comSymbole) {
-        this.comSymbole = comSymbole;
+        this.comSymbol = comSymbole;
     }
 
     /**
@@ -77,14 +89,14 @@ public class StockQuoteModel {
     /**
      * @return the volume
      */
-    public float getVolume() {
+    public int getVolume() {
         return volume;
     }
 
     /**
      * @param volume the volume to set
      */
-    public void setVolume(float volume) {
+    public void setVolume(int volume) {
         this.volume = volume;
     }
 
