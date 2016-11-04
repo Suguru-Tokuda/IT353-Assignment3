@@ -7,7 +7,9 @@ package controller;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
+import model.StockQuoteList;
 import model.StockQuoteModel;
+import model.UserInput;
 
 /**
  *
@@ -18,21 +20,27 @@ import model.StockQuoteModel;
 @SessionScoped
 public class StockQuoteController {
     
-    private StockQuoteModel theModel;
+    private StockQuoteList theList;
+    private UserInput input;
     
     public StockQuoteController() {
-        theModel = new StockQuoteModel();
+        theList = new StockQuoteList();
+        input = new UserInput();
     }
     
-    public StockQuoteModel getStockQuoteModel() {
-        return theModel;
+    public String retrieveQuote() {
+        String retVal;
+        if (this.getStockInfo() != null) {
+            retVal = "quote.xhtml";
+        } else {
+            retVal = "index.xhtml";
+        }
+        return retVal;
     }
-    
-    public StockQuoteModel getStockPrice() {
+        
+    public StockQuoteModel getStockInfo() {
         StockQuoteModel retVal = null;
-        
-        
-        
+        retVal = theList.getQuoteModel(input.getComSymbol());        
         return retVal;
     }
     
