@@ -8,6 +8,7 @@ package model;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
+import java.util.Set;
 
 /**
  *
@@ -43,12 +44,17 @@ public class StockQuoteList {
     
     public StockQuoteModel getQuoteModel(String symbol) {
         StockQuoteModel retVal = null;
-        Iterator iterator = stockList.entrySet().iterator();
-        while (iterator.hasNext()) {
-            Map.Entry pair = (Map.Entry)iterator.next();
-            if (symbol.equals(pair.getKey())) {
-                retVal = (StockQuoteModel) pair.getValue();
+        
+        Set<String> setOfKeys = stockList.keySet();
+        Iterator<String> iterator = setOfKeys.iterator();
+        
+        while(iterator.hasNext()) {
+            
+            String key = iterator.next();
+            if (symbol.equals(key)) {
+                retVal = stockList.get(key);
             }
+            
         }
         return retVal;
     }
