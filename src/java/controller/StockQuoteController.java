@@ -43,9 +43,5 @@ public class StockQuoteController {
         retVal = theList.getQuoteModel(input.getComSymbol());        
         return retVal;
     }
-    
-    
-    
-    
-    
+       
 }

@@ -15,24 +15,24 @@ import java.util.Set;
  * @author Suguru
  */
 public class StockQuoteList {
-    
+
     private HashMap<String, StockQuoteModel> stockList = new HashMap<>();
-    
+
     public StockQuoteList() {
-        
+
         StockQuoteModel model1, model2, model3, model4, model5;
-        model1 = new StockQuoteModel("MMM", 166.48f, -0.35f, -0.21f, 1927527, 10.52f);
-        model2 = new StockQuoteModel("AXP", 65.51f, 0.18f, 0.28f, 3429894, 5.81f);    
-        model3 = new StockQuoteModel("AAPL", 108.84f, -.99f, 0.9f, 3806950, 3.4f);
-        model4 = new StockQuoteModel("BA", 139.54f, -0.48f, -0.34f, 2949327, -3.49f);
-        model5 = new StockQuoteModel("CAT", 82.31f, 1.04f, 1.28f, 5745732, 21.12f);
+        model1 = new StockQuoteModel("MMM", 166.48, -0.35, -0.21, 1927527, 10.52);
+        model2 = new StockQuoteModel("AXP", 65.51, 0.18, 0.28, 3429894, 5.81);
+        model3 = new StockQuoteModel("AAPL", 108.84, -.99, 0.9, 3806950, 3.4);
+        model4 = new StockQuoteModel("BA", 139.54, -0.48, -0.34, 2949327, -3.49);
+        model5 = new StockQuoteModel("CAT", 82.31, 1.04, 1.28, 5745732, 21.12);
 
         stockList.put("MMM", model1);
         stockList.put("AXP", model2);
         stockList.put("AAPL", model3);
         stockList.put("BA", model4);
         stockList.put("CAT", model5);
-        
+
     }
 
     /**
@@ -41,22 +41,22 @@ public class StockQuoteList {
     public HashMap<String, StockQuoteModel> getStockList() {
         return stockList;
     }
-    
+
     public StockQuoteModel getQuoteModel(String symbol) {
         StockQuoteModel retVal = null;
-        
+
         Set<String> setOfKeys = stockList.keySet();
         Iterator<String> iterator = setOfKeys.iterator();
-        
-        while(iterator.hasNext()) {
-            
+
+        while (iterator.hasNext()) {
+
             String key = iterator.next();
-            if (symbol.equals(key)) {
+            if (stockList.get(key).getComSymbole().equals(symbol)) {
                 retVal = stockList.get(key);
             }
-            
+
         }
         return retVal;
     }
-    
+
 }

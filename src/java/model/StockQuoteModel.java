@@ -10,18 +10,18 @@ package model;
  * @author Suguru
  */
 public class StockQuoteModel {
-    
+
     private String comSymbol;
-    private float price;
-    private float changeInPrice;
-    private float changeInPercent;
+    private double price;
+    private double changeInPrice;
+    private double changeInPercent;
     private int volume;
-    private float ytdChange;
-    
+    private double ytdChange;
+
     public StockQuoteModel() {
     }
-    
-    public StockQuoteModel(String comSymbol, float price, float changeInPrice, float changeInPercent, int volume, float ytdChange) {
+
+    public StockQuoteModel(String comSymbol, double price, double changeInPrice, double changeInPercent, int volume, double ytdChange) {
         this.comSymbol = comSymbol;
         this.price = price;
         this.changeInPrice = changeInPrice;
@@ -47,7 +47,7 @@ public class StockQuoteModel {
     /**
      * @return the price
      */
-    public float getPrice() {
+    public double getPrice() {
         return price;
     }
 
@@ -61,7 +61,7 @@ public class StockQuoteModel {
     /**
      * @return the changeInPrice
      */
-    public float getChangeInPrice() {
+    public double getChangeInPrice() {
         return changeInPrice;
     }
 
@@ -75,7 +75,7 @@ public class StockQuoteModel {
     /**
      * @return the changeInPercent
      */
-    public float getChangeInPercent() {
+    public double getChangeInPercent() {
         return changeInPercent;
     }
 
@@ -103,18 +103,15 @@ public class StockQuoteModel {
     /**
      * @return the ytdChange
      */
-    public float getYtdChange() {
+    public double getYtdChange() {
         return ytdChange;
     }
 
     /**
      * @param ytdChange the ytdChange to set
      */
-    public void setYtdChange(float ytdChange) {
+    public void setYtdChange(double ytdChange) {
         this.ytdChange = ytdChange;
     }
-    
-    
-    
-    
+
 }
