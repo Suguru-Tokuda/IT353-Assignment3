@@ -19,11 +19,11 @@
             <h:form>
                 <h:panelGrid id="panel" columns="2" border="0"
                              cellpadding="10" cellspacing="0" >
-                    <h:outputLabel value="Company Simble:" />
-                    <h:inputText id = "companySimble"/>  
+                    <p:outputLabel value="Company Simble:" />
+                    <p:inputText id="companySimble" value="#{stockQuoteController.input.comSymbol}"/>  
                     <f:facet name="footer">
                         <h:panelGroup style="display:block; text-align:center">
-                            <h:commandButton id="submit" value="Get a Quote" action="#{stockQuoteController.retrieveQuote()}"/>
+                            <p:commandButton id="submit" value="Get a Quote" action="#{stockQuoteController.retrieveQuote()}"/>
                         </h:panelGroup>
                     </f:facet>
                 </h:panelGrid>

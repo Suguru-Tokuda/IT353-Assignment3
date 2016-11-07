@@ -5,12 +5,51 @@ To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
     <head>
-        <title>TODO supply a title</title>
+        <title>Quote</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     </head>
     <body>
-        <div>TODO write content</div>
+        <h:dataTable id="quoteTable" value="#{stockQuoteController.stockInfo}" var="aRow" border="1" cellpadding="2" cellspacing="0">
+            <h:column>
+                <f:facet name="header">
+                    <h:outputText value="Compapny Symbol"/>
+                </f:facet>
+                <h:outputText value="#{stockQuoteController.stockInfo.comSymbole}"/>
+            </h:column>
+            <h:column>
+                <f:facet name="header">
+                    <h:outputText value="Price"/>
+                </f:facet>
+                <h:outputText value="#{stockQuoteController.stockInfo.price}"/>
+            </h:column>
+            <h:column>
+                <f:facet name="header">
+                    <h:outputText value="Change"/>
+                </f:facet>
+                <h:outputText value="#{stockQuoteController.stockInfo.changeInPrice}"/>
+            </h:column>
+            <h:column>
+                <f:facet name="header">
+                    <h:outputText value="% Change"/>
+                </f:facet>
+                <h:outputText value="#{stockQuoteController.stockInfo.changeInPercent}"/>
+            </h:column>
+            <h:column>
+                <f:facet name="header">
+                    <h:outputText value="Volume"/>
+                </f:facet>
+                <h:outputText value="#{stockQuoteController.stockInfo.volume}"/>
+            </h:column>
+            <h:column>
+                <f:facet name="header">
+                    <h:outputText value="YTD change"/>
+                </f:facet>
+                <h:outputText value="#{stockQuoteController.stockInfo.ytdChange}"/>
+            </h:column>
+        </h:dataTable>
     </body>
 </html>

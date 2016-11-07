@@ -12,6 +12,14 @@ package model;
 public class UserInput {
 
     private String comSymbol;
+    
+    //Constructor
+    public UserInput() {
+    }
+    
+    public UserInput(String comSymbol) {
+        this.comSymbol = comSymbol;
+    }
 
     /**
      * @return the comSymbol

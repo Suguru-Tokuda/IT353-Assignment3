@@ -15,19 +15,48 @@ import model.UserInput;
  *
  * @author Suguru
  */
-
 @ManagedBean
 @SessionScoped
 public class StockQuoteController {
-    
-    private StockQuoteList theList;
-    private UserInput input;
-    
+
+    private StockQuoteList theList = new StockQuoteList();
+    private UserInput input = new UserInput();
+
+    //Constructor
     public StockQuoteController() {
         theList = new StockQuoteList();
         input = new UserInput();
     }
-    
+
+    //Getters & Setters
+    /**
+     * @return the theList
+     */
+    public StockQuoteList getTheList() {
+        return theList;
+    }
+
+    /**
+     * @param theList the theList to set
+     */
+    public void setTheList(StockQuoteList theList) {
+        this.theList = theList;
+    }
+
+    /**
+     * @return the input
+     */
+    public UserInput getInput() {
+        return input;
+    }
+
+    /**
+     * @param input the input to set
+     */
+    public void setInput(UserInput input) {
+        this.input = input;
+    }
+
     public String retrieveQuote() {
         String retVal;
         if (this.getStockInfo() != null) {
@@ -37,11 +66,11 @@ public class StockQuoteController {
         }
         return retVal;
     }
-        
+
     public StockQuoteModel getStockInfo() {
-        StockQuoteModel retVal = null;
-        retVal = theList.getQuoteModel(input.getComSymbol());        
+        StockQuoteModel retVal;
+        retVal = getTheList().getQuoteModel(getInput().getComSymbol());
         return retVal;
     }
-       
+
 }
