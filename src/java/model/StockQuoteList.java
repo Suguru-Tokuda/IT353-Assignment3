@@ -7,7 +7,6 @@ package model;
 
 import java.util.HashMap;
 import java.util.Iterator;
-import java.util.Map;
 import java.util.Set;
 
 /**
@@ -51,7 +50,10 @@ public class StockQuoteList {
         while (iterator.hasNext()) {
 
             String key = iterator.next();
-            if (stockList.get(key).getComSymbole().equals(symbol)) {
+            String comSymbol = stockList.get(key).getComSymbol().toLowerCase();
+            String input = symbol.toLowerCase();
+            
+            if (comSymbol.equals(input)) { 
                 retVal = stockList.get(key);
             }
         }

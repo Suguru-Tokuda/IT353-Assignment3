@@ -5,11 +5,13 @@
  */
 package model;
 
+import java.io.Serializable;
+
 /**
  *
  * @author Suguru
  */
-public class StockQuoteModel {
+public class StockQuoteModel implements Serializable {
 
     private String comSymbol;
     private double price;
@@ -33,15 +35,15 @@ public class StockQuoteModel {
     /**
      * @return the comSymbole
      */
-    public String getComSymbole() {
+    public String getComSymbol() {
         return comSymbol;
     }
 
     /**
-     * @param comSymbole the comSymbole to set
+     * @param comSymbol the comSymbole to set
      */
-    public void setComSymbole(String comSymbole) {
-        this.comSymbol = comSymbole;
+    public void setComSymbol(String comSymbol) {
+        this.comSymbol = comSymbol;
     }
 
     /**
