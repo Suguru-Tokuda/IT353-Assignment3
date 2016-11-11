@@ -13,12 +13,12 @@ and open the template in the editor.
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     </head>
     <body>
-        <h:dataTable id="quoteTable" value="#{stockQuoteController.stockInfo}" var="aRow" border="1" cellpadding="2" cellspacing="0">
+<!--        <h:dataTable id="quoteTable" value="#{stockQuoteController.stockInfo}" var="aRow" border="1" cellpadding="2" cellspacing="0">-->
             <h:column>
                 <f:facet name="header">
                     <h:outputText value="Compapny Symbol"/>
                 </f:facet>
-                <h:outputText value="#{stockQuoteController.stockInfo.comSymbole}"/>
+                <h:outputText value="#{stockQuoteController.stockInfo.comSymbol}"/>
             </h:column>
             <h:column>
                 <f:facet name="header">
@@ -50,6 +50,6 @@ and open the template in the editor.
                 </f:facet>
                 <h:outputText value="#{stockQuoteController.stockInfo.ytdChange}"/>
             </h:column>
-        </h:dataTable>
+        <!--</h:dataTable>-->
     </body>
 </html>

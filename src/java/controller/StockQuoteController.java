@@ -24,8 +24,6 @@ public class StockQuoteController {
 
     //Constructor
     public StockQuoteController() {
-        theList = new StockQuoteList();
-        input = new UserInput();
     }
 
     //Getters & Setters
@@ -59,7 +57,9 @@ public class StockQuoteController {
 
     public String retrieveQuote() {
         String retVal;
-        if (this.getStockInfo() != null) {
+        StockQuoteModel model = this.getStockInfo();        
+        
+        if (model != null) {
             retVal = "quote.xhtml";
         } else {
             retVal = "index.xhtml";
@@ -69,6 +69,9 @@ public class StockQuoteController {
 
     public StockQuoteModel getStockInfo() {
         StockQuoteModel retVal;
+        
+        System.out.println(getInput().getComSymbol());
+                
         retVal = getTheList().getQuoteModel(getInput().getComSymbol());
         return retVal;
     }

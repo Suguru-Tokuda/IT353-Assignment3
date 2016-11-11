@@ -54,7 +54,6 @@ public class StockQuoteList {
             if (stockList.get(key).getComSymbole().equals(symbol)) {
                 retVal = stockList.get(key);
             }
-
         }
         return retVal;
     }
