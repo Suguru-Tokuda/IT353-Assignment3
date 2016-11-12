@@ -124,7 +124,7 @@ public class StockQuoteController implements Serializable {
     // End of hashmap
 
     // Methods using database
-    public StockQuoteModel retreiveQuoteWithDAO() {
+    public StockQuoteModel getStockInfoWithDAO() {
         StockQuoteModel retVal = null;
         retVal = stockQuoteDAO.getQuote(input);
         return retVal;
@@ -132,7 +132,7 @@ public class StockQuoteController implements Serializable {
 
     public String retrieveQuoteWithDAO() {
         String retVal = null;
-        StockQuoteModel model = this.retreiveQuoteWithDAO();
+        StockQuoteModel model = this.getStockInfoWithDAO();
 
         if (model != null) {
             //This code will redirect to another page with the right URL -- quote.xhtml in this case.
