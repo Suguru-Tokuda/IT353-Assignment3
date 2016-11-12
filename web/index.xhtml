@@ -16,27 +16,25 @@
             }
         </style>
     </h:head>
-    
-        <h:body>
-            <h1>Quote</h1>
-            <h:form>
-                <h:panelGrid class="panelGridCenter" id="panel" columns="2" border="0"
-                             cellpadding="10" cellspacing="0" >
-                    <p:outputLabel value="Company Simble:" />
-                    <p:inputText id="companySymble" value="#{stockQuoteController.input.comSymbol}"/>
-                    <!--                    <f:metadata>
-                                            <f:viewParam name="comSymbol" value="#{stockQuoteController.input.comSymbol}" required="true"/>
-                                        </f:metadata>-->
-                    <f:facet name="footer">
-                        <h:panelGroup style="display:block; text-align:center">
-                            <p:commandButton id="submit" value="Get a Quote" action="#{stockQuoteController.retrieveQuote()}"/>
-                        </h:panelGroup>
-                    </f:facet>
-                </h:panelGrid>                    
-                <c:if test="#{stockQuoteController.gotQuote == false}">
-                    <p:outputLabel value="#{stockQuoteController.outputMsg}"/>
-                </c:if>
-            </h:form>
-        </h:body>
-    <!--</center>-->
+    <h:body>
+        <h1>Quote</h1>
+        <h:form>
+            <h:panelGrid class="panelGridCenter" id="panel" columns="2" border="0"
+                         cellpadding="10" cellspacing="0" >
+                <p:outputLabel value="Company Symbol:" />
+                <p:inputText id="companySymbol" value="#{stockQuoteController.input.comSymbol}"/>
+<!--                <f:metadata>
+                    <f:viewParam name="comSymbol" value="#{stockQuoteController.input.comSymbol}" required="true"/>
+                </f:metadata>-->
+                <f:facet name="footer">
+                    <h:panelGroup style="display:block; text-align:center">
+                        <p:commandButton id="submit" value="Get a Quote" action="#{stockQuoteController.retrieveQuote()}"/>
+                    </h:panelGroup>
+                </f:facet>
+            </h:panelGrid>                    
+            <c:if test="#{stockQuoteController.gotQuote == false}">
+                <p:outputLabel value="#{stockQuoteController.outputMsg}"/>
+            </c:if>
+        </h:form>
+    </h:body>
 </html>

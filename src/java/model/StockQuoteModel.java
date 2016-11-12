@@ -56,7 +56,7 @@ public class StockQuoteModel implements Serializable {
     /**
      * @param price the price to set
      */
-    public void setPrice(float price) {
+    public void setPrice(double price) {
         this.price = price;
     }
 
@@ -70,7 +70,7 @@ public class StockQuoteModel implements Serializable {
     /**
      * @param changeInPrice the changeInPrice to set
      */
-    public void setChangeInPrice(float changeInPrice) {
+    public void setChangeInPrice(double changeInPrice) {
         this.changeInPrice = changeInPrice;
     }
 
@@ -84,7 +84,7 @@ public class StockQuoteModel implements Serializable {
     /**
      * @param changeInPercent the changeInPercent to set
      */
-    public void setChangeInPercent(float changeInPercent) {
+    public void setChangeInPercent(double changeInPercent) {
         this.changeInPercent = changeInPercent;
     }
 
